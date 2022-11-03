@@ -22,7 +22,7 @@
         this.$emit('delete-task', id)
       }
     },
-    emits: ['toggle-reminder'],
+    emits: ['toggle-reminder', 'delete-task'],
   }
 </script>
 

@@ -1,7 +1,8 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
-    <ButtonVue 
+    <ButtonVue
+      v-show="homePage"
       :text="showAddTask ? 'Close':'Add Task'" 
       :color="showAddTask ? 'red':'green'"
       @btn-click="$emit('toggle-add-task')" 
@@ -23,6 +24,15 @@
     },
     components: {
       ButtonVue,
+    },
+    computed: {
+      homePage() {
+        if(this.$route.path === '/'){
+          return true
+        } else {
+          return false
+        }
+      }
     },
     emits: ['toggle-add-task']
   }
